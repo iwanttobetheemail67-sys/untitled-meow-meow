@@ -18,4 +18,4 @@ Death Sound - Metal Pipe falling Sound effect, Official Jixaw Metal Pipe falling
 
 "Null" (weird angry bird pig thing) - believed to come from: https://www.tiktok.com/@hatekzb/photo/7144823269508582699
 
-Game and everything else made by Mr. Meow Meow with some help from friends and beta testers
+Game and everything else made by Mr. Meow Meow (me) with some help from friends and beta testers
