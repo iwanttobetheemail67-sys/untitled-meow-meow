@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://blyp26r1x8mug"]
+
+[ext_resource type="Script" uid="uid://dvkhap1y5e0or" path="res://gold_bar.gd" id="1_ux6r3"]
+[ext_resource type="Texture2D" uid="uid://xy8vlv17y2qc" path="res://gold_bar.png" id="2_21s3l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ldy1l"]
+size = Vector2(190, 71)
+
+[node name="gold bar" type="Node2D" groups=["kill_me"]]
+script = ExtResource("1_ux6r3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(105, 92)
+texture = ExtResource("2_21s3l")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(107, 92.5)
+shape = SubResource("RectangleShape2D_ldy1l")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+offset_left = 13.0
+offset_top = 56.0
+offset_right = 202.0
+offset_bottom = 128.0
+color = Color(0, 1, 1, 0.45882353)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

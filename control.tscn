@@ -1,0 +1,131 @@
+[gd_scene load_steps=8 format=3 uid="uid://chk62wf0r7xky"]
+
+[ext_resource type="Script" uid="uid://cbm1ryo5tamit" path="res://control.gd" id="1_0fbet"]
+[ext_resource type="Texture2D" uid="uid://dl82hivmq1umc" path="res://happy critter.png" id="2_qtu10"]
+[ext_resource type="Texture2D" uid="uid://b0b1tseqsrc2k" path="res://Meow Meow Dude facing right.png" id="3_ee4bf"]
+[ext_resource type="Texture2D" uid="uid://dmnjjf564oj12" path="res://cookie.png" id="4_ee4bf"]
+[ext_resource type="Texture2D" uid="uid://b5l3nx6omehbe" path="res://trophy.png" id="5_kbped"]
+[ext_resource type="Texture2D" uid="uid://cas16nodjha0m" path="res://eyes.png" id="6_fj5cn"]
+[ext_resource type="Texture2D" uid="uid://b75hr1dslm368" path="res://black void.png" id="7_iy58a"]
+
+[node name="Control" type="Node"]
+script = ExtResource("1_0fbet")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -2
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.3282903, 0.8868053, 0.10441257, 1)
+
+[node name="Label" type="Label" parent="ColorRect"]
+z_index = 1
+layout_mode = 0
+offset_left = 233.99998
+offset_top = 27.0
+offset_right = 947.0
+offset_bottom = 140.0
+theme_override_font_sizes/font_size = 44
+text = " Untitled Meow Meow!!!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="ColorRect"]
+z_index = 1
+layout_mode = 0
+offset_left = 421.0
+offset_top = 165.0
+offset_right = 712.0
+offset_bottom = 242.0
+theme_override_font_sizes/font_size = 34
+text = "Play"
+
+[node name="Button2" type="Button" parent="ColorRect"]
+z_index = 1
+layout_mode = 0
+offset_left = 420.0
+offset_top = 256.0
+offset_right = 711.0
+offset_bottom = 333.0
+theme_override_font_sizes/font_size = 34
+text = "Settings"
+
+[node name="Button3" type="Button" parent="ColorRect"]
+z_index = 1
+layout_mode = 0
+offset_left = 419.0
+offset_top = 543.0
+offset_right = 710.0
+offset_bottom = 620.0
+theme_override_font_sizes/font_size = 34
+text = "exit :("
+
+[node name="Button4" type="Button" parent="ColorRect"]
+z_index = 1
+layout_mode = 0
+offset_left = 420.0
+offset_top = 351.0
+offset_right = 711.0
+offset_bottom = 428.0
+theme_override_font_sizes/font_size = 34
+text = "tutorial"
+
+[node name="Button5" type="Button" parent="ColorRect"]
+z_index = 1
+layout_mode = 0
+offset_left = 420.0
+offset_top = 446.0
+offset_right = 711.0
+offset_bottom = 523.0
+theme_override_font_sizes/font_size = 34
+text = "credits"
+
+[node name="HappyCritter" type="Sprite2D" parent="."]
+position = Vector2(942, 344)
+scale = Vector2(0.6209999, 0.67700005)
+texture = ExtResource("2_qtu10")
+
+[node name="MeowMeowDudeFacingRight" type="Sprite2D" parent="."]
+position = Vector2(214.00002, 320.75)
+scale = Vector2(0.33333334, 0.33583334)
+texture = ExtResource("3_ee4bf")
+
+[node name="cookie 1" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(210, 530)
+texture = ExtResource("4_ee4bf")
+
+[node name="cookie 2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(960, 530)
+texture = ExtResource("4_ee4bf")
+
+[node name="cookie 3" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(210, 130)
+texture = ExtResource("4_ee4bf")
+
+[node name="Game Won" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(960, 130)
+texture = ExtResource("5_kbped")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="eyes" type="Sprite2D" parent="."]
+z_index = 5
+position = Vector2(565, 438)
+scale = Vector2(6.605, 4.0425)
+texture = ExtResource("6_fj5cn")
+
+[node name="Sprite2D" type="Sprite2D" parent="eyes"]
+z_index = -1
+position = Vector2(-119.30355, 137.29128)
+texture = ExtResource("7_iy58a")
+
+[connection signal="pressed" from="ColorRect/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="ColorRect/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="ColorRect/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="ColorRect/Button4" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="ColorRect/Button5" to="." method="_on_button_5_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

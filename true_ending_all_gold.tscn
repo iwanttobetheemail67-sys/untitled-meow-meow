@@ -1,0 +1,80 @@
+[gd_scene load_steps=5 format=3 uid="uid://c4r3uvhjwip76"]
+
+[ext_resource type="Script" uid="uid://bf1jdekusr84o" path="res://true_ending_all_gold.gd" id="1_w4o2o"]
+[ext_resource type="Texture2D" uid="uid://dl82hivmq1umc" path="res://happy critter.png" id="2_764ut"]
+[ext_resource type="Texture2D" uid="uid://dmnjjf564oj12" path="res://cookie.png" id="3_764ut"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i20gb"]
+bg_color = Color(0, 1, 0, 1)
+
+[node name="true ending all gold" type="Node2D"]
+script = ExtResource("1_w4o2o")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1153.0
+offset_bottom = 649.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 143.0
+offset_top = 90.0
+offset_right = 987.0
+offset_bottom = 139.0
+text = "Wow, I did not except anyone on finding this little secret, thank you so much for playing my dumb little game.
+                                 It was a lot of fun to make, and I hope it was even more fun to play."
+
+[node name="Label2" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 311.0
+offset_top = 354.0
+offset_right = 976.0
+offset_bottom = 403.0
+text = "And you got all the gold, have a cookie for your efforts :D
+"
+
+[node name="Button" type="Button" parent="ColorRect"]
+layout_mode = 0
+offset_left = 483.0
+offset_top = 291.0
+offset_right = 589.0
+offset_bottom = 333.0
+theme_override_font_sizes/font_size = 23
+theme_override_styles/normal = SubResource("StyleBoxFlat_i20gb")
+text = "Finish"
+
+[node name="Sprite2D" type="Sprite2D" parent="ColorRect"]
+position = Vector2(553, 230.00003)
+scale = Vector2(0.518, 0.378)
+texture = ExtResource("2_764ut")
+
+[node name="Sprite2D2" type="Sprite2D" parent="ColorRect"]
+position = Vector2(564, 530)
+texture = ExtResource("3_764ut")
+
+[node name="hard cookie" type="Sprite2D" parent="ColorRect"]
+position = Vector2(854, 530)
+texture = ExtResource("3_764ut")
+
+[node name="hard mode" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 318.0
+offset_top = 373.0
+offset_right = 983.0
+offset_bottom = 422.0
+text = "also for doing it on hard mode, you get an extra cookie
+"
+
+[node name="all challengez" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 286.0
+offset_top = 392.0
+offset_right = 951.0
+offset_bottom = 441.0
+text = "with all challenges as well, a true completionist, 3 cookies for you :3"
+
+[node name="all challenges cookie" type="Sprite2D" parent="ColorRect"]
+position = Vector2(284, 530)
+texture = ExtResource("3_764ut")
+
+[connection signal="pressed" from="ColorRect/Button" to="." method="_on_button_pressed"]

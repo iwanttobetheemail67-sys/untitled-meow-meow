@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://djya7cbo8mk3l"]
+
+[ext_resource type="Script" uid="uid://dtnoiubx851vu" path="res://poison.gd" id="1_gh8aa"]
+[ext_resource type="Texture2D" uid="uid://dsn5botx5b0ih" path="res://poison.png" id="2_hqv03"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pjqmx"]
+size = Vector2(102, 186)
+
+[node name="poison" type="Node2D" groups=["kill_me"]]
+script = ExtResource("1_gh8aa")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(100, 101)
+texture = ExtResource("2_hqv03")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(99, 98)
+shape = SubResource("RectangleShape2D_pjqmx")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+offset_left = 48.0
+offset_top = 4.0
+offset_right = 150.0
+offset_bottom = 191.0
+color = Color(0, 1, 1, 0.39215687)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://4jkfrgxun1pf"]
+
+[ext_resource type="Script" uid="uid://djlhq4304b8b5" path="res://upside_down.gd" id="1_j30of"]
+[ext_resource type="Texture2D" uid="uid://b4lm25subt0ot" path="res://goober_upsidedown.png" id="2_v8vga"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j30of"]
+size = Vector2(169, 117)
+
+[node name="upside down" type="Node2D" groups=["kill_me"]]
+script = ExtResource("1_j30of")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(103, 104)
+texture = ExtResource("2_v8vga")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(95.5, 108.5)
+shape = SubResource("RectangleShape2D_j30of")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+offset_left = 11.0
+offset_top = 50.0
+offset_right = 180.0
+offset_bottom = 167.0
+color = Color(0, 1, 1, 0.33333334)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

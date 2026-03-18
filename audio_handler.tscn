@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://b2o7i1qseei8k"]
+
+[ext_resource type="Script" uid="uid://h3s6wldt2heg" path="res://on_open.gd" id="1_krka2"]
+[ext_resource type="AudioStream" uid="uid://c2igsfm2cihsq" path="res://Eastside Story.mp3" id="2_40cug"]
+[ext_resource type="AudioStream" uid="uid://c43bkhbkq6s08" path="res://hard mode meow moew.mp3" id="3_utl3p"]
+[ext_resource type="AudioStream" uid="uid://bfjm1o6pahpq3" path="res://Metal pipe falling sound effect meow meow.mp3" id="4_utl3p"]
+[ext_resource type="AudioStream" uid="uid://b4qdcpe1qgqj1" path="res://null_death.mp3" id="5_utl3p"]
+
+[node name="Audio Handler" type="Node"]
+script = ExtResource("1_krka2")
+
+[node name="bg_music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_40cug")
+autoplay = true
+bus = &"Music"
+parameters/looping = true
+
+[node name="Nightmare" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_utl3p")
+bus = &"Music"
+parameters/looping = false
+
+[node name="death sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_utl3p")
+volume_db = -10.0
+bus = &"Other"
+
+[node name="null_death" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_utl3p")

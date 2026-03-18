@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://v02ssj85l7jq"]
+
+[ext_resource type="Script" uid="uid://bua30iagoepov" path="res://null_object.gd" id="1_kvq8v"]
+[ext_resource type="Texture2D" uid="uid://b6lj23m1thsux" path="res://portal.png" id="2_kvq8v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7pvhd"]
+size = Vector2(144, 129)
+
+[node name="null_object" type="Node2D" groups=["kill_me"]]
+script = ExtResource("1_kvq8v")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(73, 61)
+scale = Vector2(0.72347015, 0.6934702)
+texture = ExtResource("2_kvq8v")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(72, 64.5)
+shape = SubResource("RectangleShape2D_7pvhd")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+offset_right = 144.0
+offset_bottom = 129.0
+color = Color(0, 1, 1, 0.3764706)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

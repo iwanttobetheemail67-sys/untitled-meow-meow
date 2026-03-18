@@ -1,0 +1,59 @@
+[gd_scene load_steps=2 format=3 uid="uid://bgshvr6c23jj8"]
+
+[ext_resource type="Script" uid="uid://d22p1ip711iyb" path="res://pause_menu.gd" id="1_hdmo1"]
+
+[node name="Control" type="Control"]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hdmo1")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1150.0
+offset_bottom = 647.0
+color = Color(0.3282903, 0.8868053, 0.10441257, 1)
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 218.0
+offset_top = 140.0
+offset_right = 931.0
+offset_bottom = 253.0
+theme_override_font_sizes/font_size = 44
+text = "Welcome to the pause menu :D"
+
+[node name="Button" type="Button" parent="ColorRect"]
+layout_mode = 0
+offset_left = 395.0
+offset_top = 280.0
+offset_right = 686.0
+offset_bottom = 357.0
+theme_override_font_sizes/font_size = 34
+text = "continue"
+
+[node name="Button2" type="Button" parent="ColorRect"]
+layout_mode = 0
+offset_left = 397.0
+offset_top = 383.0
+offset_right = 688.0
+offset_bottom = 460.0
+theme_override_font_sizes/font_size = 34
+text = "Settings?"
+
+[node name="Button3" type="Button" parent="ColorRect"]
+layout_mode = 0
+offset_left = 396.0
+offset_top = 480.0
+offset_right = 687.0
+offset_bottom = 557.0
+theme_override_font_sizes/font_size = 34
+text = "exit :("
+
+[connection signal="pressed" from="ColorRect/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="ColorRect/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="ColorRect/Button3" to="." method="_on_button_3_pressed"]

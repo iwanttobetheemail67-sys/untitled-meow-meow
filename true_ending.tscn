@@ -1,0 +1,77 @@
+[gd_scene load_steps=5 format=3 uid="uid://dnl0v6wjrkwi4"]
+
+[ext_resource type="Script" uid="uid://ph4wvhecbw7a" path="res://true_ending.gd" id="1_yih5d"]
+[ext_resource type="Texture2D" uid="uid://dl82hivmq1umc" path="res://happy critter.png" id="2_k2d3t"]
+[ext_resource type="Texture2D" uid="uid://dmnjjf564oj12" path="res://cookie.png" id="3_k2d3t"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d3lgu"]
+bg_color = Color(0, 1, 0, 1)
+
+[node name="true ending" type="Node2D"]
+script = ExtResource("1_yih5d")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1153.0
+offset_bottom = 649.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 169.0
+offset_top = 34.0
+offset_right = 1013.0
+offset_bottom = 83.0
+text = "Wow, I did not except anyone on finding this little secret, thank you so much for playing my dumb little game.
+                                 It was a lot of fun to make, and I hope it was even more fun to play."
+
+[node name="Label2" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 266.0
+offset_top = 327.0
+offset_right = 910.0
+offset_bottom = 376.0
+text = "press this button to finish the game, also next time, consider getting ALL the gold :3
+"
+
+[node name="Button" type="Button" parent="ColorRect"]
+layout_mode = 0
+offset_left = 518.0
+offset_top = 270.0
+offset_right = 624.0
+offset_bottom = 312.0
+theme_override_font_sizes/font_size = 23
+theme_override_styles/normal = SubResource("StyleBoxFlat_d3lgu")
+text = "Finish"
+
+[node name="Sprite2D" type="Sprite2D" parent="ColorRect"]
+position = Vector2(578, 185.00002)
+scale = Vector2(0.518, 0.378)
+texture = ExtResource("2_k2d3t")
+
+[node name="hard cookie" type="Sprite2D" parent="ColorRect"]
+position = Vector2(750, 525)
+texture = ExtResource("3_k2d3t")
+
+[node name="super_cookie" type="Sprite2D" parent="ColorRect"]
+position = Vector2(450, 525)
+texture = ExtResource("3_k2d3t")
+
+[node name="hard" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 329.0
+offset_top = 357.0
+offset_right = 973.0
+offset_bottom = 406.0
+text = "For beating it with hard mode, have a cookie for your troubles
+"
+
+[node name="super_hard" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 379.0
+offset_top = 385.0
+offset_right = 766.0
+offset_bottom = 434.0
+text = "and have an extra for having all the challenges on
+"
+
+[connection signal="pressed" from="ColorRect/Button" to="." method="_on_button_pressed"]

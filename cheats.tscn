@@ -1,0 +1,387 @@
+[gd_scene load_steps=6 format=3 uid="uid://dxdc1j54mgedl"]
+
+[ext_resource type="Script" uid="uid://d21nex1vtoicn" path="res://cheats.gd" id="1_gwmfj"]
+[ext_resource type="Texture2D" uid="uid://dufi0no2yfimg" path="res://hard_mode_on.png" id="3_3hbmm"]
+[ext_resource type="Texture2D" uid="uid://ddv30md8tf8ys" path="res://cheat_on.png" id="4_ds1q8"]
+[ext_resource type="Texture2D" uid="uid://g1cp0ly5u708" path="res://hard_mode_off.png" id="4_rmh43"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gwmfj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_rmh43")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ds1q8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="cheats" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gwmfj")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.3282903, 0.8868053, 0.10441257, 1)
+
+[node name="Label2" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 465.0
+offset_top = -6.0
+offset_right = 698.0
+offset_bottom = 89.0
+theme_override_font_sizes/font_size = 44
+text = "Cheats"
+
+[node name="Label" type="Label" parent="ColorRect/Label2"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 62.0
+offset_right = 161.0
+offset_bottom = 85.0
+text = "just for fun"
+
+[node name="Button3" type="Button" parent="ColorRect"]
+layout_mode = 0
+offset_left = 274.0
+offset_top = 565.0
+offset_right = 565.0
+offset_bottom = 642.0
+theme_override_font_sizes/font_size = 34
+text = "Back"
+
+[node name="hitboxes" type="CheckButton" parent="ColorRect"]
+layout_mode = 0
+offset_left = 308.0
+offset_top = 454.0
+offset_right = 546.0
+offset_bottom = 562.0
+theme_override_icons/checked = ExtResource("3_3hbmm")
+theme_override_icons/unchecked = ExtResource("4_rmh43")
+theme_override_icons/checked_disabled = ExtResource("3_3hbmm")
+theme_override_icons/unchecked_disabled = ExtResource("4_rmh43")
+theme_override_icons/checked_mirrored = ExtResource("3_3hbmm")
+theme_override_icons/unchecked_mirrored = ExtResource("4_rmh43")
+theme_override_icons/checked_disabled_mirrored = ExtResource("3_3hbmm")
+theme_override_icons/unchecked_disabled_mirrored = ExtResource("4_rmh43")
+text = "Show hitboxes"
+
+[node name="death_skulls" type="CheckButton" parent="ColorRect"]
+layout_mode = 0
+offset_left = 601.0
+offset_top = 455.0
+offset_right = 874.0
+offset_bottom = 563.0
+theme_override_icons/checked = ExtResource("3_3hbmm")
+theme_override_icons/unchecked = ExtResource("4_rmh43")
+theme_override_icons/checked_disabled = ExtResource("3_3hbmm")
+theme_override_icons/unchecked_disabled = ExtResource("4_rmh43")
+theme_override_icons/checked_mirrored = ExtResource("3_3hbmm")
+theme_override_icons/unchecked_mirrored = ExtResource("4_rmh43")
+theme_override_icons/checked_disabled_mirrored = ExtResource("3_3hbmm")
+theme_override_icons/unchecked_disabled_mirrored = ExtResource("4_rmh43")
+text = "remove death skulls"
+
+[node name="diff" type="SpinBox" parent="ColorRect"]
+layout_mode = 0
+offset_left = 464.0
+offset_top = 91.0
+offset_right = 641.0
+offset_bottom = 122.0
+min_value = 1.0
+value = 100.0
+allow_greater = true
+prefix = "fall speed:  "
+
+[node name="diff off" type="Button" parent="ColorRect/diff"]
+layout_mode = 0
+offset_left = -92.0
+offset_top = -1.0
+offset_right = -24.0
+offset_bottom = 30.0
+text = "turn off"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ColorRect/diff/diff off"]
+position = Vector2(299, 16)
+scale = Vector2(0.58, 0.44)
+sprite_frames = SubResource("SpriteFrames_gwmfj")
+
+[node name="score mult" type="SpinBox" parent="ColorRect"]
+layout_mode = 0
+offset_left = 464.0
+offset_top = 130.0
+offset_right = 640.0
+offset_bottom = 161.0
+min_value = 1.0
+value = 1.0
+allow_greater = true
+prefix = "multiplier:  "
+
+[node name="mult off" type="Button" parent="ColorRect/score mult"]
+layout_mode = 0
+offset_left = -92.0
+offset_top = -1.0
+offset_right = -24.0
+offset_bottom = 30.0
+text = "turn off"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ColorRect/score mult/mult off"]
+position = Vector2(298, 16)
+scale = Vector2(0.58, 0.44)
+sprite_frames = SubResource("SpriteFrames_gwmfj")
+
+[node name="health" type="SpinBox" parent="ColorRect"]
+layout_mode = 0
+offset_left = 464.0
+offset_top = 170.0
+offset_right = 642.0
+offset_bottom = 201.0
+min_value = 1.0
+value = 3.0
+allow_greater = true
+prefix = "Health:  "
+
+[node name="health off" type="Button" parent="ColorRect/health"]
+layout_mode = 0
+offset_left = -92.0
+offset_top = -1.0
+offset_right = -24.0
+offset_bottom = 30.0
+text = "turn off"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ColorRect/health/health off"]
+position = Vector2(298, 15)
+scale = Vector2(0.58, 0.44)
+sprite_frames = SubResource("SpriteFrames_gwmfj")
+
+[node name="speed" type="SpinBox" parent="ColorRect"]
+layout_mode = 0
+offset_left = 461.0
+offset_top = 212.0
+offset_right = 641.0
+offset_bottom = 243.0
+min_value = 1.0
+max_value = 99999.0
+value = 100.0
+allow_greater = true
+prefix = "Speed:  "
+
+[node name="speed off" type="Button" parent="ColorRect/speed"]
+layout_mode = 0
+offset_left = -92.0
+offset_top = -1.0
+offset_right = -24.0
+offset_bottom = 30.0
+text = "turn off"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ColorRect/speed/speed off"]
+position = Vector2(301, 16)
+scale = Vector2(0.58, 0.44)
+sprite_frames = SubResource("SpriteFrames_gwmfj")
+
+[node name="spawn amount" type="SpinBox" parent="ColorRect"]
+layout_mode = 0
+offset_left = 461.0
+offset_top = 252.0
+offset_right = 641.0
+offset_bottom = 283.0
+min_value = 1.0
+value = 100.0
+prefix = "spawn rate:  "
+
+[node name="Label" type="Label" parent="ColorRect/spawn amount"]
+visible = false
+layout_mode = 0
+offset_left = -110.0
+offset_top = 31.0
+offset_right = 317.0
+offset_bottom = 62.0
+scale = Vector2(0.94204795, 1)
+theme_override_font_sizes/font_size = 10
+text = "Warning: high spawn rates WILL cause LOTS OF lag, anything past 25 isn't recommended"
+
+[node name="amount off" type="Button" parent="ColorRect/spawn amount"]
+layout_mode = 0
+offset_left = -92.0
+offset_top = -1.0
+offset_right = -24.0
+offset_bottom = 30.0
+text = "turn off"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ColorRect/spawn amount/amount off"]
+position = Vector2(298, 16)
+scale = Vector2(0.58, 0.44)
+sprite_frames = SubResource("SpriteFrames_gwmfj")
+
+[node name="zoom" type="HSlider" parent="ColorRect"]
+layout_mode = 0
+offset_left = 405.0
+offset_top = 283.0
+offset_right = 697.0
+offset_bottom = 381.0
+min_value = 0.05
+max_value = 0.5
+step = 0.05
+value = 0.5
+tick_count = 10
+ticks_on_borders = true
+ticks_position = 3
+
+[node name="Label" type="Label" parent="ColorRect/zoom"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 52.0
+offset_right = 376.0
+offset_bottom = 76.0
+theme_override_font_sizes/font_size = 10
+text = "0.1x     0.2x    0.3x     0.4x    0.5x    0.6x    0.7x    0.8x     0.9x     1x"
+
+[node name="Label2" type="Label" parent="ColorRect/zoom"]
+layout_mode = 0
+offset_left = 126.0
+offset_top = 15.0
+offset_right = 173.0
+offset_bottom = 38.0
+theme_override_font_sizes/font_size = 16
+text = "zoom"
+
+[node name="zoom off" type="Button" parent="ColorRect/zoom"]
+layout_mode = 0
+offset_left = -93.0
+offset_top = 29.0
+offset_right = -25.0
+offset_bottom = 60.0
+text = "turn off"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ColorRect/zoom/zoom off"]
+position = Vector2(423, 20)
+scale = Vector2(0.58, 0.44)
+sprite_frames = SubResource("SpriteFrames_gwmfj")
+
+[node name="spawn rate" type="HSlider" parent="ColorRect"]
+layout_mode = 0
+offset_left = 401.0
+offset_top = 339.0
+offset_right = 693.0
+offset_bottom = 437.0
+min_value = 0.1
+max_value = 1.0
+step = 0.01
+value = 0.5
+tick_count = 10
+ticks_on_borders = true
+ticks_position = 3
+
+[node name="Label" type="Label" parent="ColorRect/spawn rate"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 52.0
+offset_right = 376.0
+offset_bottom = 76.0
+theme_override_font_sizes/font_size = 10
+text = "0.1s     0.2s    0.3s     0.4s    0.5s      0.6s    0.7s    0.8s     0.9s     1s"
+
+[node name="Label2" type="Label" parent="ColorRect/spawn rate"]
+layout_mode = 0
+offset_left = 76.0
+offset_top = 16.0
+offset_right = 219.0
+offset_bottom = 39.0
+theme_override_font_sizes/font_size = 16
+text = "intial spawn Timer"
+
+[node name="spawn_rate off" type="Button" parent="ColorRect/spawn rate"]
+layout_mode = 0
+offset_left = -94.0
+offset_top = 31.0
+offset_right = -26.0
+offset_bottom = 62.0
+text = "turn off"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ColorRect/spawn rate"]
+position = Vector2(328, 48)
+scale = Vector2(0.58, 0.44)
+sprite_frames = SubResource("SpriteFrames_gwmfj")
+
+[node name="evil chance" type="HSlider" parent="ColorRect"]
+layout_mode = 0
+offset_left = 401.0
+offset_top = 396.0
+offset_right = 693.0
+offset_bottom = 494.0
+max_value = 10.0
+value = 1.0
+tick_count = 11
+ticks_on_borders = true
+ticks_position = 3
+
+[node name="Label" type="Label" parent="ColorRect/evil chance"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 52.0
+offset_right = 376.0
+offset_bottom = 76.0
+theme_override_font_sizes/font_size = 10
+text = "0%     10%    20%    30%   40%   50%   60%   70%  80%   90%  100%"
+
+[node name="Label2" type="Label" parent="ColorRect/evil chance"]
+layout_mode = 0
+offset_left = 126.0
+offset_top = 15.0
+offset_right = 173.0
+offset_bottom = 38.0
+theme_override_font_sizes/font_size = 16
+text = "evil chance"
+
+[node name="evil off" type="Button" parent="ColorRect/evil chance"]
+layout_mode = 0
+offset_left = -93.0
+offset_top = 29.0
+offset_right = -25.0
+offset_bottom = 60.0
+text = "turn off"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ColorRect/evil chance/evil off"]
+position = Vector2(423, 20)
+scale = Vector2(0.58, 0.44)
+sprite_frames = SubResource("SpriteFrames_gwmfj")
+
+[node name="Button4" type="Button" parent="ColorRect"]
+layout_mode = 0
+offset_left = 592.0
+offset_top = 564.0
+offset_right = 883.0
+offset_bottom = 641.0
+theme_override_font_sizes/font_size = 30
+text = "turn off all cheats"
+
+[connection signal="pressed" from="ColorRect/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="toggled" from="ColorRect/hitboxes" to="." method="_on_hitboxes_toggled"]
+[connection signal="toggled" from="ColorRect/death_skulls" to="." method="_on_death_skulls_toggled"]
+[connection signal="value_changed" from="ColorRect/diff" to="." method="_on_diff_value_changed"]
+[connection signal="pressed" from="ColorRect/diff/diff off" to="." method="_on_diff_off_pressed"]
+[connection signal="value_changed" from="ColorRect/score mult" to="." method="_on_score_mult_value_changed"]
+[connection signal="pressed" from="ColorRect/score mult/mult off" to="." method="_on_mult_off_pressed"]
+[connection signal="value_changed" from="ColorRect/health" to="." method="_on_health_value_changed"]
+[connection signal="pressed" from="ColorRect/health/health off" to="." method="_on_health_off_pressed"]
+[connection signal="value_changed" from="ColorRect/speed" to="." method="_on_speed_value_changed"]
+[connection signal="pressed" from="ColorRect/speed/speed off" to="." method="_on_speed_off_pressed"]
+[connection signal="value_changed" from="ColorRect/spawn amount" to="." method="_on_spawn_amount_value_changed"]
+[connection signal="pressed" from="ColorRect/spawn amount/amount off" to="." method="_on_amount_off_pressed"]
+[connection signal="drag_ended" from="ColorRect/zoom" to="." method="_on_zoom_drag_ended"]
+[connection signal="pressed" from="ColorRect/zoom/zoom off" to="." method="_on_zoom_off_pressed"]
+[connection signal="drag_ended" from="ColorRect/spawn rate" to="." method="_on_spawn_rate_drag_ended"]
+[connection signal="pressed" from="ColorRect/spawn rate/spawn_rate off" to="." method="_on_spawn_rate_off_pressed"]
+[connection signal="drag_ended" from="ColorRect/evil chance" to="." method="_on_evil_chance_drag_ended"]
+[connection signal="pressed" from="ColorRect/evil chance/evil off" to="." method="_on_evil_off_pressed"]
+[connection signal="pressed" from="ColorRect/Button4" to="." method="_on_button_4_pressed"]

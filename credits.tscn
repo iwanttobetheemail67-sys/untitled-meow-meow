@@ -1,0 +1,141 @@
+[gd_scene load_steps=5 format=3 uid="uid://b674msruajrtg"]
+
+[ext_resource type="Script" uid="uid://b8uofut0tq38n" path="res://credits.gd" id="1_nm7lk"]
+[ext_resource type="Texture2D" uid="uid://dl82hivmq1umc" path="res://happy critter.png" id="2_g4wvt"]
+[ext_resource type="Texture2D" uid="uid://bl4auc0pk3pkp" path="res://yaman.jpg" id="3_pjc1l"]
+[ext_resource type="AudioStream" uid="uid://ctsmo6mb1r011" path="res://untitled meow meow credits.mp3" id="4_pjc1l"]
+
+[node name="credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nm7lk")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_top = -3046.0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.3282903, 0.8868053, 0.10441257, 1)
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 342.0
+offset_right = 1211.0
+offset_bottom = 3573.0
+theme_override_font_sizes/font_size = 45
+text = "
+      with some help from friends and beta testers
+ Game and everything else made by Mr. Meow Meow
+
+
+
+
+This strange little image :3
+
+
+Soucred from:
+From SCP: Secret Laboratory
+ ~~~Null Death sound - RevShoot.mp3 (sampled)~~~
+
+composed by Trevor Duncan
+℗ 2017 Smith & Co.
+Released on: 2017-04-20
+Music Publisher: KPM Music Ltd.
+Themes for Radio, Film Television (Series 2) Vol. 27
+by Group-Forty Orchestra
+~~~~Null world track - Eastside Story (sampled)~~~~
+
+
+Sourced from: 
+From SCP: Secret Laboratory
+~~Hard mode transition - RevShoot.mp3 (sampled)~~
+
+sourced from:
+Official Jixaw Metal Pipe falling Sound effect
+~~~Death Sound - Metal Pipe falling Sound effect~~~
+
+The Edison Phonograph Monthly
+Edison Gold Moulded Record: 8713
+Albert Benzler
+~~Hard mode - Prettiest little song of all (sampled)~~
+
+I Found A Million Dollar Baby - A Programme Of Light
+Music (Original Recordings 1931 - 1932)
+℗ Salt & Pepper
+Layton & Johnstone · Bernice Petkere · Joe Young
+~~~Credits song - Lullaby of the Leaves (sampled)~~~
+
+composed by Trevor Duncan
+℗ 2017 Smith & Co.
+Released on: 2017-04-20
+Music Publisher: KPM Music Ltd.
+Themes for Radio, Film Television (Series 2) Vol. 27
+by Group-Forty Orchestra
+~~~~~Main track (menu music) - Eastside Story~~~~~"
+
+[node name="Sprite2D" type="Sprite2D" parent="ColorRect"]
+position = Vector2(578, 192)
+texture = ExtResource("2_g4wvt")
+
+[node name="Sprite2D2" type="Sprite2D" parent="ColorRect"]
+position = Vector2(128, 677)
+scale = Vector2(0.8955224, 0.880597)
+texture = ExtResource("3_pjc1l")
+
+[node name="Label" type="Label" parent="ColorRect/Sprite2D2"]
+offset_left = 137.34999
+offset_top = 45.423786
+offset_right = 1070.3501
+offset_bottom = 177.42378
+theme_override_font_sizes/font_size = 30
+text = "
+https://www.tiktok.com/@hatekzb/photo/7144823269508582699"
+
+[node name="Label2" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = -5.0
+offset_top = 2138.0
+offset_right = 1180.0
+offset_bottom = 2251.0
+theme_override_font_sizes/font_size = 30
+text = "                                        https://www.youtube.com/watch?v=kPWv44v0b04
+"
+
+[node name="Label3" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 316.0
+offset_top = 1022.0
+offset_right = 1054.0
+offset_bottom = 1057.0
+theme_override_font_sizes/font_size = 25
+text = "https://en.scpslgame.com/index.php?title=File:RevShoot.mp3"
+
+[node name="Label4" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 316.0
+offset_top = 1879.0
+offset_right = 1054.0
+offset_bottom = 1914.0
+theme_override_font_sizes/font_size = 25
+text = "https://en.scpslgame.com/index.php?title=File:RevShoot.mp3"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 4.0
+offset_right = 151.0
+offset_bottom = 64.0
+theme_override_font_sizes/font_size = 35
+text = "Back"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_pjc1l")
+bus = &"Music"
+parameters/looping = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

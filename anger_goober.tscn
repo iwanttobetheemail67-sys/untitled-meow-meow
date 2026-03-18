@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://by33e4sjcd087"]
+
+[ext_resource type="Script" uid="uid://dgimx5nep7nas" path="res://anger_goober.gd" id="1_4hm46"]
+[ext_resource type="Texture2D" uid="uid://cpwruw7lkwh0" path="res://angery critter.png" id="2_gwgqs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ft1vc"]
+size = Vector2(276.5, 221)
+
+[node name="anger_goober" type="Node2D" groups=["kill_me"]]
+script = ExtResource("1_4hm46")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(140, 130.5)
+scale = Vector2(0.644, 0.694)
+texture = ExtResource("2_gwgqs")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(133.75, 113.5)
+shape = SubResource("RectangleShape2D_ft1vc")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+offset_left = -5.0
+offset_top = 1.0
+offset_right = 272.0
+offset_bottom = 223.0
+color = Color(0, 1, 1, 0.4627451)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

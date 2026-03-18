@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://dblt5fam65pmv"]
+
+[ext_resource type="Script" uid="uid://bv60un60psh8r" path="res://falling_speed.gd" id="1_po623"]
+[ext_resource type="Texture2D" uid="uid://dn3iw1jwm2ss7" path="res://Fast_symbol.png" id="2_krxyo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ul01m"]
+size = Vector2(164, 188)
+
+[node name="falling_speed" type="Node2D" groups=["kill_me"]]
+script = ExtResource("1_po623")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(100, 100)
+texture = ExtResource("2_krxyo")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(100, 94)
+shape = SubResource("RectangleShape2D_ul01m")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+offset_left = 18.0
+offset_right = 182.0
+offset_bottom = 188.0
+color = Color(0, 1, 1, 0.39215687)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

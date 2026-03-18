@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://d3brrfgdihy1g"]
+
+[ext_resource type="Script" uid="uid://dpmcpnpd5givv" path="res://falling_health.gd" id="1_1i1uh"]
+[ext_resource type="Texture2D" uid="uid://c7muu0hrb8bni" path="res://Health_symbol.png" id="2_fn63x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_65qwl"]
+size = Vector2(227.5, 263.75)
+
+[node name="Falling Health" type="Node2D" groups=["kill_me"]]
+script = ExtResource("1_1i1uh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(123.00001, 144.50002)
+scale = Vector2(5.92, 5.2200003)
+texture = ExtResource("2_fn63x")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(114.25, 134.125)
+shape = SubResource("RectangleShape2D_65qwl")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+offset_right = 228.0
+offset_bottom = 266.0
+color = Color(0, 1, 1, 0.1764706)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

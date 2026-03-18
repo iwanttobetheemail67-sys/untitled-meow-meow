@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dsk7j65se3yhg"
+path="res://.godot/imported/null world soundtrack.mp3-8c561f6e04b60ac89ce0a73351bb3778.mp3str"
+
+[deps]
+
+source_file="res://null world soundtrack.mp3"
+dest_files=["res://.godot/imported/null world soundtrack.mp3-8c561f6e04b60ac89ce0a73351bb3778.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

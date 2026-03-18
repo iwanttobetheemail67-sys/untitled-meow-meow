@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://b0ratxg0hmjv5"]
+
+[ext_resource type="Script" uid="uid://4p8ym8m587n8" path="res://true_nightmare_start.gd" id="1_ok2c6"]
+[ext_resource type="Texture2D" uid="uid://djxp0ek8tbifw" path="res://Hard mode all challenges.png" id="2_njj51"]
+[ext_resource type="Texture2D" uid="uid://d2tppq5ovmbpx" path="res://hard mode.png" id="3_obaq4"]
+[ext_resource type="AudioStream" uid="uid://8plm816qfrp5" path="res://true_nightmare.mp3" id="3_wu0ff"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w53wy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_njj51")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_obaq4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="True Nightmare Start" type="Node2D"]
+script = ExtResource("1_ok2c6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(573.99994, 325.50003)
+scale = Vector2(1.4675, 1.125)
+sprite_frames = SubResource("SpriteFrames_w53wy")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_wu0ff")
+autoplay = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

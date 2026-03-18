@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bfjm1o6pahpq3"
+path="res://.godot/imported/Metal pipe falling sound effect meow meow.mp3-7d3c279259ed1eff6ac88b7e97e20b36.mp3str"
+
+[deps]
+
+source_file="res://Metal pipe falling sound effect meow meow.mp3"
+dest_files=["res://.godot/imported/Metal pipe falling sound effect meow meow.mp3-7d3c279259ed1eff6ac88b7e97e20b36.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,102 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5l42vf0c643j"]
+
+[ext_resource type="Script" uid="uid://di84vxd836fnw" path="res://game_over.gd" id="1_y26ei"]
+[ext_resource type="AudioStream" uid="uid://bfjm1o6pahpq3" path="res://Metal pipe falling sound effect meow meow.mp3" id="2_yxx3c"]
+
+[node name="Game_Over" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_y26ei")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.32941177, 0.8862745, 0.105882354, 1)
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 385.0
+offset_top = 10.0
+offset_right = 712.0
+offset_bottom = 82.0
+theme_override_font_sizes/font_size = 52
+text = "Game Over :("
+
+[node name="Button" type="Button" parent="ColorRect"]
+layout_mode = 0
+offset_left = 434.0
+offset_top = 275.0
+offset_right = 685.0
+offset_bottom = 366.0
+theme_override_font_sizes/font_size = 30
+text = "Play again"
+
+[node name="Button2" type="Button" parent="ColorRect"]
+layout_mode = 0
+offset_left = 434.0
+offset_top = 399.0
+offset_right = 685.0
+offset_bottom = 490.0
+theme_override_font_sizes/font_size = 30
+text = "Main menu"
+
+[node name="Button3" type="Button" parent="ColorRect"]
+layout_mode = 0
+offset_left = 434.0
+offset_top = 521.0
+offset_right = 685.0
+offset_bottom = 612.0
+theme_override_font_sizes/font_size = 30
+text = "Quit :("
+
+[node name="THE SCORE" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 437.0
+offset_top = 167.0
+offset_right = 665.0
+offset_bottom = 222.0
+theme_override_font_sizes/font_size = 40
+text = "Score:"
+
+[node name="THE SCORE2" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 440.0
+offset_top = 216.0
+offset_right = 679.0
+offset_bottom = 271.0
+theme_override_font_sizes/font_size = 30
+text = "High Score: "
+
+[node name="new best" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 443.0
+offset_top = 79.0
+offset_right = 682.0
+offset_bottom = 134.0
+theme_override_font_sizes/font_size = 40
+text = "(NEW BEST)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="time" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 425.0
+offset_top = 138.0
+offset_right = 829.0
+offset_bottom = 193.0
+theme_override_font_sizes/font_size = 25
+text = "Time survived:"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_yxx3c")
+volume_db = -10.0
+bus = &"Other"
+
+[connection signal="pressed" from="ColorRect/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="ColorRect/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="ColorRect/Button3" to="." method="_on_button_3_pressed"]
