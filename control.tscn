@@ -90,22 +90,18 @@ scale = Vector2(0.33333334, 0.33583334)
 texture = ExtResource("3_ee4bf")
 
 [node name="cookie 1" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(210, 530)
 texture = ExtResource("4_ee4bf")
 
 [node name="cookie 2" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(960, 530)
 texture = ExtResource("4_ee4bf")
 
 [node name="cookie 3" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(210, 130)
 texture = ExtResource("4_ee4bf")
 
 [node name="Game Won" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(960, 130)
 texture = ExtResource("5_kbped")
 
@@ -113,6 +109,7 @@ texture = ExtResource("5_kbped")
 autostart = true
 
 [node name="eyes" type="Sprite2D" parent="."]
+visible = false
 z_index = 5
 position = Vector2(565, 438)
 scale = Vector2(6.605, 4.0425)
