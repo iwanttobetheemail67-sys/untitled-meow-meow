@@ -99,6 +99,8 @@ func _on_ture_end_body_entered(body: Node2D) -> void:
 func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("pause"):
 		if panel.visible == false:
+			if AudioHandler.super_hard_mode == true:
+				$"lower cam".rotation_degrees = 0
 			panel.visible = true
 			if AudioHandler.seeing_it == true:
 				$panels/Sprite2D2.visible = false
@@ -106,6 +108,8 @@ func _input(_event: InputEvent) -> void:
 
 
 func _on_resume_pressed() -> void:
+	if AudioHandler.super_hard_mode == true:
+		$"lower cam".rotation_degrees = 180
 	get_tree().paused = false
 	panel.visible = false
 
